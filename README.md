@@ -17,7 +17,7 @@ docker pull akara4ok/nodejs_app:latest
 ## To run image
 To run docker on 80 port  with limit in 1 cpu and 512m of memory
 ```
-docker run -p 80:80 --cpus=1 -m 512m nodejs_app
+docker run -p 80:80 --cpus=1 -m 512m akara4ok/nodejs_app
 ```
 
 To check correctness
