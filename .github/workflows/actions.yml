@@ -1,26 +1,25 @@
 name: CI/CD
 on:
-  push:
-    branches: [ ci/cd ]
-  pull_request:
-    branches: [ ci/cd ]
+    push:
+        branches: [ci/cd]
+    pull_request:
+        branches: [ci/cd]
 jobs:
-  code_style:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    code_style:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: 'npm'
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
+                  cache: 'npm'
 
-      - name: Install packages
-        run:
-          npm ci
+            - name: Install packages
+              run: npm ci
 
-      - name: Eslint and Prettier checks
-        run: |
-          npm run lint
-          npm run format
+            - name: Eslint and Prettier checks
+              run: |
+                  npm run lint
+                  npm run format

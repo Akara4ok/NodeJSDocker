@@ -1,27 +1,27 @@
 {
-  "name": "nodejsdocker",
-  "version": "1.0.0",
-  "description": "Dockerhub: https://hub.docker.com/repository/docker/akara4ok/nodejs_app/tags",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ignore-path .gitignore",
-    "lint:fix": "eslint . --fix --ignore-path .gitignore",
-    "format": "prettier --ignore-path .gitignore --check .",
-    "format:fix": "prettier --ignore-path .gitignore . --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Akara4ok/NodeJSDocker.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Akara4ok/NodeJSDocker/issues"
-  },
-  "homepage": "https://github.com/Akara4ok/NodeJSDocker#readme",
-  "dependencies": {
-    "eslint": "^8.29.0",
-    "prettier": "^2.8.0"
-  }
+    "name": "nodejsdocker",
+    "version": "1.0.0",
+    "description": "Dockerhub: https://hub.docker.com/repository/docker/akara4ok/nodejs_app/tags",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint . --ignore-path .gitignore",
+        "lint:fix": "eslint . --fix --ignore-path .gitignore",
+        "format": "prettier --ignore-path .gitignore --check .",
+        "format:fix": "prettier --ignore-path .gitignore . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Akara4ok/NodeJSDocker.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Akara4ok/NodeJSDocker/issues"
+    },
+    "homepage": "https://github.com/Akara4ok/NodeJSDocker#readme",
+    "dependencies": {
+        "eslint": "^8.29.0",
+        "prettier": "^2.8.0"
+    }
 }
