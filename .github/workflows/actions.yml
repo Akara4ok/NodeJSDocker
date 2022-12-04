@@ -93,5 +93,5 @@ jobs:
                   docker container ls
             - name: curl
               run: |
-                  sleep 5;
+                  sleep 10;
                   curl localhost:80
