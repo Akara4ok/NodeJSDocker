@@ -2,7 +2,10 @@ FROM node:latest
 
 WORKDIR /app
 
-COPY index.js ./
+COPY package*.json ./
+RUN npm install
+
+COPY . .
 
 EXPOSE 80
 
