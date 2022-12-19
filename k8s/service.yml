@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodejsdocker
+    name: nodejsdocker
 spec:
-  selector:
-    app: nodejsdocker
-  ports:
-    - port: 80
-      targetPort: 8080
-  type: LoadBalancer
+    selector:
+        app: nodejsdocker
+    ports:
+        - port: 80
+          targetPort: 8080
+    type: LoadBalancer
