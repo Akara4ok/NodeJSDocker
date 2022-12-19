@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejsdocker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejsdocker
+  template:
+    metadata:
+      labels:
+        app: nodejsdocker
+    spec:
+      containers:
+        - name: nodejsdocker
+          image: akara4ok/nodejs_app:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /liveness-probe
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            failureThreshold: 2
+        - name: nginx
+          image: nginx
+          imagePullPolicy: IfNotPresent
+          resources:
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+          - mountPath: /etc/nginx
+            readOnly: true
+            name: nginx-conf
+          - mountPath: /var/log/nginx
+            name: log
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf
+              - key: virtualhost.conf
+                path: virtualhost/virtualhost.conf
+        - name: log
+          emptyDir: {}
